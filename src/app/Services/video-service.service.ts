@@ -15,9 +15,7 @@ export class VideoServiceService {
   getVideobyId(Id: number): Observable<Video> {
     return this.HttpClient.get<Video>(this.api + '/' + Id);
   }
-  getVideobyGenre(Genre: string): Observable<Video> {
-    return this.HttpClient.get<Video>(this.api + '/' + Genre);
-  }
+ 
   addVideo(p: Video): Observable<Video> {
     return this.HttpClient.post<Video>(this.api, p);
   }

@@ -1,4 +1,5 @@
  
+<input type="text" name="price" (keyup)="searchbyGenre($event)">
 <div class="row">
         <div class="col-md-4" *ngFor="let v of video, let i=index">
             <div  class="card" style="width: 18rem;">
@@ -8,9 +9,9 @@
                 <p class="card-text">genre: {{v.genre}}</p>
                 <p class="card-text">public: {{v.public}}</p>
                 <p class="card-text">nbrShared: {{v.nbrShared}}</p>
-                <!-- <button (click)="redirectme(p.id)"> Redirect me</button>
-                <button class="btn btn-primary"(click)="increment(i)">Like</button>
-                <button class="btn btn-info"(click)="decrement(i)" [disabled]="p.quantity==0">Buy</button>
+                 <button *ngIf="v.nbrShared==0" (click)="redirect(v.id)"> Modify </button>
+               <button *ngIf="v.public" class="btn btn-primary"(click)="increment(v)">Share</button>  
+                <!-- <button class="btn btn-info"(click)="decrement(i)" [disabled]="p.quantity==0">Buy</button> 
                 <button class="btn btn-info"(click)="deleteproduct(p.id)" >delete</button> -->
                 </div>
             </div>
